@@ -1,7 +1,7 @@
 digraph ar2dtool_diagram { 
 rankdir=LR;
 size="1000"
-node [shape = rectangle, color="black"]; "omicso:Icat" "omicso:SILAC" "omicso:RiboSeq" "omicso:Proteomics" "omicso:RtqPcr" "obo:PSO_0000012" "obo:PSO_0000001" "omicso:Transcriptomics" "obo:OBI0001271" "omicso:WesternBlot" "omicso:DifferentialExpressionStudy" "omicso:ExpressionStudy" "efo:EFO_0000506" "omicso:Pla" "omicso:ShotgunProteomics" "obo:PSO_0000011" "omicso:overExpression" "omicso:ProteomicsTechnology" "omicso:ProteinMicroarray" "omicso:cage" "obo:OBI0003097" "omicso:Srm" "omicso:scRnaSeq" "omicso:RnaMicroarray" "omicso:OmicsAssay" "omicso:BaselineExpressionStudy" "omicso:TranscriptomicsTechnology" "efo:EFO_0000510" "omicso:OmicsTechnology" ; /*classes style*/
+node [shape = rectangle, color="black"]; "omicso:Icat" "omicso:SILAC" "omicso:RiboSeq" "omicso:Proteomics" "omicso:RtqPcr" "obo:PSO_0000012" "obo:PSO_0000001" "omicso:Transcriptomics" "obo:OBI0001271" "omicso:WesternBlot" "omicso:ExpressionStudy" "omicso:DifferentialExpressionStudy" "efo:EFO_0000506" "omicso:Pla" "omicso:ShotgunProteomics" "obo:PSO_0000011" "omicso:overExpression" "omicso:ProteomicsTechnology" "omicso:ProteinMicroarray" "omicso:cage" "obo:OBI0003097" "omicso:Srm" "omicso:scRnaSeq" "omicso:RnaMicroarray" "omicso:OmicsAssay" "omicso:BaselineExpressionStudy" "omicso:TranscriptomicsTechnology" "efo:EFO_0000510" "omicso:OmicsTechnology" ; /*classes style*/
 	"omicso:Srm" -> "omicso:ProteomicsTechnology" [ label = "rdfs:subClassOf" ];
 	"omicso:RtqPcr" -> "omicso:TranscriptomicsTechnology" [ label = "rdfs:subClassOf" ];
 	"omicso:TranscriptomicsTechnology" -> "omicso:OmicsTechnology" [ label = "rdfs:subClassOf" ];
