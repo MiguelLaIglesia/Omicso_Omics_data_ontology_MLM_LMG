@@ -1,0 +1,2224 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://omicso#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://omicso#">
+    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
+    <Prefix name="ns" IRI="http://www.owl-ontologies.com/ns#"/>
+    <Prefix name="efo" IRI="http://www.ebi.ac.uk/efo/"/>
+    <Prefix name="mod" IRI="https://w3id.org/mod#"/>
+    <Prefix name="obo" IRI="http://purl.obolibrary.org/obo/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="sio" IRI="http://semanticscience.org/resource/"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="ncit" IRI="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="omicso" IRI="http://omicso#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:created"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#date">2024-01-01</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
+        <Literal>Lucia Muñoz Gil</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
+        <Literal>Miguel La Iglesia Mirones</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <Literal xml:lang="en">An ontology for omics data query and annotation</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:license"/>
+        <IRI>https://creativecommons.org/licenses/by/4.0/</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+        <Literal>Omics Data Ontology (omicso)</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="mod:createdWith"/>
+        <IRI>https://chowlk.linkeddata.es/</IRI>
+    </Annotation>
+    <Declaration>
+        <Class abbreviatedIRI="ncit:C14250"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ncit:C165061"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ncit:C16612"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ncit:C17021"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ncit:C179773"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ncit:C26548"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ncit:C26549"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ncit:C43568"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ncit:C71462"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ncit:C813"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="BaselineExpressionStudy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="CellType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DifferentialExpressionChange"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DifferentialExpressionStudy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DownRegulation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ExperimentalConditions"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ExpressionStudy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="FileId"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="GeneName"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Icat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="MoleculeID"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="NanoporeSequencing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="NoChange"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="OmicsAssay"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="OmicsFile"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="OmicsTechnology"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Pla"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ProteinMicroarray"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Proteomics"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ProteomicsTechnology"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="RiboSeq"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="RnaMicroarray"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="RtqPcr"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="SILAC"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ShotgunProteomics"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Srm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Transcriptomics"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="TranscriptomicsTechnology"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="UpRegulation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="WesternBlot"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="cage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="omicsoaper"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="overExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="qPcr"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="scRnaSeq"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="obo:GO_0003674"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="obo:GO_0005575"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="obo:GO_0008150"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="obo:OBI0001271"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="obo:OBI0003097"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="obo:OBI_0001617"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="obo:PO_0009011"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="obo:PSO_0000001"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="obo:PSO_0000011"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="obo:PSO_0000012"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="efo:EFO_0000506"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="efo:EFO_0000510"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ns:BaselineExpressionLevel"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="belongsTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasAssay"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasBaselineExpressionLevel"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasDoi"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasExperimentalConditions"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasExperimentalVariable"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasExpressionChange"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasExpressionResult"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasExpressionStudy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasFileID"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasGeneID"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasGeneName"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasGeneSymbol"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasOmicsFile"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasPlantStructure"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasProteinID"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasPubMedId"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasTaxonId"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isBaselineExpressionLevelOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isDoiOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isExperimentalConditionsOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isExpressionChangeOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isExpressionResultOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isGeneNameOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isGeneSymbolOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isPlanStructureOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isPlantStructureOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isPubMedIdOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isStudiedIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isTargetedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isUsedIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isVariableOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="studiesCell"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="studiesGeneProduct"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="targets"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="usesTechnology"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="&apos;encodes&apos;"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="&apos;functionOf&apos;"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="&apos;hasFunction&apos;"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="&apos;hasParticipant&apos;"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="&apos;hasProduct&apos;"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="&apos;isEncodedBy&apos;"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="&apos;isRepresentedBy&apos;"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="&apos;isTranslatedFrom&apos;"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="&apos;isTranslatedInto&apos;"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="&apos;locatedIn&apos;"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="&apos;locationOf&apos;"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="&apos;participatesIn&apos;"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="&apos;represents&apos;"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="obo:RO_0000056"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="obo:RO_0000057"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="obo:RO_0000079"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="obo:RO_0000085"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="obo:RO_0001015"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="obo:RO_0001025"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="sio:SIO_000205"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="sio:SIO_000210"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="sio:SIO_010078"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="sio:SIO_010079"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="sio:SIO_010082"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="sio:SIO_010083"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="bioinformaticTool"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="cellName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="experimentalMetadata"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="expressionUnits"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="filename"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="geneSeq"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="geneSeqLength"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasFormat"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasPvalue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="log2FoldChange"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="proteinSequence"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="structureName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="obo:OBI_0001937"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dc:abstract"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dc:creator"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dc:date"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dc:title"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:created"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:license"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="mod:createdWith"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="ncit:C43568"/>
+        <Class IRI="GeneName"/>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class abbreviatedIRI="ncit:C14250"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="hasTaxonId"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ncit:C14250"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="hasName"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ncit:C16612"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="hasGeneName"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ncit:C16612"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="hasGeneSymbol"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ncit:C16612"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="isTargetedBy"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ncit:C16612"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="geneSeq"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ncit:C16612"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="geneSeqLength"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ncit:C17021"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="isStudiedIn"/>
+            <Class IRI="Proteomics"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ncit:C17021"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="isStudiedIn"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ncit:C17021"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="proteinSequence"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ncit:C26548"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="&apos;hasProduct&apos;"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="ncit:C17021"/>
+                <Class abbreviatedIRI="ncit:C26549"/>
+                <Class abbreviatedIRI="ncit:C813"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ncit:C26548"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="hasExpressionResult"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ncit:C26548"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="isStudiedIn"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ncit:C26548"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="&apos;hasProduct&apos;"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ncit:C26548"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="&apos;isRepresentedBy&apos;"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ncit:C43568"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="isGeneSymbolOf"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ncit:C71462"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="isDoiOf"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="BaselineExpressionStudy"/>
+        <Class IRI="ExpressionStudy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="BaselineExpressionStudy"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="hasBaselineExpressionLevel"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="CellType"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="cellName"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DifferentialExpressionChange"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="isExpressionChangeOf"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DifferentialExpressionStudy"/>
+        <Class IRI="ExpressionStudy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DifferentialExpressionStudy"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="hasExpressionChange"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ExperimentalConditions"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="hasExperimentalVariable"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="obo:PSO_0000001"/>
+                <Class abbreviatedIRI="efo:EFO_0000510"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ExperimentalConditions"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="hasExperimentalVariable"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ExperimentalConditions"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="hasPlantStructure"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ExperimentalConditions"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="isExperimentalConditionsOf"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ExperimentalConditions"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="studiesCell"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ExpressionStudy"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="hasExpressionResult"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="GeneName"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="isGeneNameOf"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Icat"/>
+        <Class IRI="ProteomicsTechnology"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="MoleculeID"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="hasGeneID"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="MoleculeID"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="hasProteinID"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="MoleculeID"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="&apos;represents&apos;"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="OmicsAssay"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="hasExpressionStudy"/>
+            <Class IRI="ExpressionStudy"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="OmicsAssay"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="hasExperimentalConditions"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="OmicsAssay"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="hasOmicsFile"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="OmicsAssay"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="hasExpressionStudy"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="OmicsAssay"/>
+        <DataMinCardinality cardinality="1">
+            <DataProperty IRI="bioinformaticTool"/>
+        </DataMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="OmicsAssay"/>
+        <DataMinCardinality cardinality="1">
+            <DataProperty IRI="experimentalMetadata"/>
+        </DataMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="OmicsFile"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="hasFileID"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="OmicsFile"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="filename"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="OmicsFile"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="hasFormat"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Pla"/>
+        <Class IRI="ProteomicsTechnology"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ProteinMicroarray"/>
+        <Class IRI="ProteomicsTechnology"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Proteomics"/>
+        <Class IRI="OmicsAssay"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Proteomics"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="usesTechnology"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ProteomicsTechnology"/>
+        <Class IRI="OmicsTechnology"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ProteomicsTechnology"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="isUsedIn"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="RiboSeq"/>
+        <Class IRI="TranscriptomicsTechnology"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="RnaMicroarray"/>
+        <Class IRI="TranscriptomicsTechnology"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="RtqPcr"/>
+        <Class IRI="TranscriptomicsTechnology"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="SILAC"/>
+        <Class IRI="ProteomicsTechnology"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ShotgunProteomics"/>
+        <Class IRI="ProteomicsTechnology"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Srm"/>
+        <Class IRI="ProteomicsTechnology"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Transcriptomics"/>
+        <Class IRI="OmicsAssay"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Transcriptomics"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="usesTechnology"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="TranscriptomicsTechnology"/>
+        <Class IRI="OmicsTechnology"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="TranscriptomicsTechnology"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="isUsedIn"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="WesternBlot"/>
+        <Class IRI="ProteomicsTechnology"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="cage"/>
+        <Class IRI="TranscriptomicsTechnology"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="omicsoaper"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="hasAssay"/>
+            <Class IRI="OmicsAssay"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="omicsoaper"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="hasAssay"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="omicsoaper"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="studiesGeneProduct"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="omicsoaper"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="hasDoi"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="omicsoaper"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="hasPubMedId"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="omicsoaper"/>
+        <DataMinCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="dc:creator"/>
+        </DataMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="omicsoaper"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="dc:abstract"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="omicsoaper"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="dc:date"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="omicsoaper"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="dc:title"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="overExpression"/>
+        <Class abbreviatedIRI="efo:EFO_0000510"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="scRnaSeq"/>
+        <Class IRI="TranscriptomicsTechnology"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="obo:OBI0001271"/>
+        <Class IRI="TranscriptomicsTechnology"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="obo:OBI0003097"/>
+        <Class IRI="ProteomicsTechnology"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="obo:OBI_0001617"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="isPubMedIdOf"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="obo:PO_0009011"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="belongsTo"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="obo:PO_0009011"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="isPlantStructureOf"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="obo:PO_0009011"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="structureName"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="obo:PSO_0000011"/>
+        <Class abbreviatedIRI="obo:PSO_0000001"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="obo:PSO_0000012"/>
+        <Class abbreviatedIRI="obo:PSO_0000001"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="efo:EFO_0000506"/>
+        <Class abbreviatedIRI="efo:EFO_0000510"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ns:BaselineExpressionLevel"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="isBaselineExpressionLevelOf"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class abbreviatedIRI="ncit:C165061"/>
+        <Class abbreviatedIRI="ncit:C43568"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="ncit:C17021"/>
+        <Class abbreviatedIRI="ncit:C26549"/>
+        <Class abbreviatedIRI="ncit:C813"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="DownRegulation"/>
+        <Class IRI="NoChange"/>
+        <Class IRI="UpRegulation"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="overExpression"/>
+        <Class abbreviatedIRI="efo:EFO_0000506"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="obo:GO_0003674"/>
+        <Class abbreviatedIRI="obo:GO_0005575"/>
+        <Class abbreviatedIRI="obo:GO_0008150"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="obo:PSO_0000011"/>
+        <Class abbreviatedIRI="obo:PSO_0000012"/>
+    </DisjointClasses>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="hasBaselineExpressionLevel"/>
+        <ObjectProperty IRI="isBaselineExpressionLevelOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="hasDoi"/>
+        <ObjectProperty IRI="isDoiOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="hasExperimentalConditions"/>
+        <ObjectProperty IRI="isExperimentalConditionsOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="hasExperimentalVariable"/>
+        <ObjectProperty IRI="isVariableOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="hasExpressionChange"/>
+        <ObjectProperty IRI="isExpressionChangeOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="hasExpressionResult"/>
+        <ObjectProperty IRI="isExpressionResultOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="hasGeneName"/>
+        <ObjectProperty IRI="isGeneNameOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="hasGeneSymbol"/>
+        <ObjectProperty IRI="isGeneSymbolOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="hasPlantStructure"/>
+        <ObjectProperty IRI="isPlanStructureOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="hasPubMedId"/>
+        <ObjectProperty IRI="isPubMedIdOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="isStudiedIn"/>
+        <ObjectProperty IRI="studiesGeneProduct"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="isTargetedBy"/>
+        <ObjectProperty IRI="targets"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="isUsedIn"/>
+        <ObjectProperty IRI="usesTechnology"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="obo:RO_0000056"/>
+        <ObjectProperty abbreviatedIRI="obo:RO_0000057"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="obo:RO_0000079"/>
+        <ObjectProperty abbreviatedIRI="obo:RO_0000085"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="obo:RO_0001015"/>
+        <ObjectProperty abbreviatedIRI="obo:RO_0001025"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="sio:SIO_000205"/>
+        <ObjectProperty abbreviatedIRI="sio:SIO_000210"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="sio:SIO_010078"/>
+        <ObjectProperty abbreviatedIRI="sio:SIO_010079"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="sio:SIO_010082"/>
+        <ObjectProperty abbreviatedIRI="sio:SIO_010083"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="belongsTo"/>
+        <Class abbreviatedIRI="obo:PO_0009011"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasAssay"/>
+        <Class IRI="omicsoaper"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasBaselineExpressionLevel"/>
+        <Class IRI="BaselineExpressionStudy"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasDoi"/>
+        <Class IRI="omicsoaper"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasExperimentalConditions"/>
+        <Class IRI="OmicsAssay"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasExperimentalVariable"/>
+        <Class IRI="ExperimentalConditions"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasExpressionChange"/>
+        <Class IRI="DifferentialExpressionStudy"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasExpressionResult"/>
+        <Class abbreviatedIRI="ncit:C26548"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasExpressionResult"/>
+        <Class IRI="ExpressionStudy"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasExpressionStudy"/>
+        <Class IRI="OmicsAssay"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasFileID"/>
+        <Class IRI="OmicsFile"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasGeneID"/>
+        <Class IRI="MoleculeID"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasGeneName"/>
+        <Class abbreviatedIRI="ncit:C16612"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasGeneSymbol"/>
+        <Class abbreviatedIRI="ncit:C16612"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasOmicsFile"/>
+        <Class IRI="OmicsAssay"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasPlantStructure"/>
+        <Class IRI="ExperimentalConditions"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasProteinID"/>
+        <Class IRI="MoleculeID"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasPubMedId"/>
+        <Class IRI="omicsoaper"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasTaxonId"/>
+        <Class abbreviatedIRI="ncit:C14250"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="isBaselineExpressionLevelOf"/>
+        <Class abbreviatedIRI="ns:BaselineExpressionLevel"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="isDoiOf"/>
+        <Class abbreviatedIRI="ncit:C71462"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="isExperimentalConditionsOf"/>
+        <Class IRI="ExperimentalConditions"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="isExpressionChangeOf"/>
+        <Class IRI="DifferentialExpressionChange"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="isExpressionResultOf"/>
+        <ObjectUnionOf>
+            <Class IRI="DifferentialExpressionChange"/>
+            <Class abbreviatedIRI="ns:BaselineExpressionLevel"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="isGeneNameOf"/>
+        <Class IRI="GeneName"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="isGeneSymbolOf"/>
+        <Class abbreviatedIRI="ncit:C43568"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="isPlantStructureOf"/>
+        <Class abbreviatedIRI="obo:PO_0009011"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="isPubMedIdOf"/>
+        <Class abbreviatedIRI="obo:OBI_0001617"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="isStudiedIn"/>
+        <Class abbreviatedIRI="ncit:C17021"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="isStudiedIn"/>
+        <Class abbreviatedIRI="ncit:C26548"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="isStudiedIn"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI="ncit:C26549"/>
+            <Class abbreviatedIRI="ncit:C813"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="isTargetedBy"/>
+        <Class abbreviatedIRI="ncit:C16612"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="isUsedIn"/>
+        <Class IRI="ProteomicsTechnology"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="isUsedIn"/>
+        <Class IRI="TranscriptomicsTechnology"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="isVariableOf"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI="obo:PSO_0000001"/>
+            <Class abbreviatedIRI="efo:EFO_0000510"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="studiesCell"/>
+        <Class IRI="ExperimentalConditions"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="studiesGeneProduct"/>
+        <Class IRI="omicsoaper"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="targets"/>
+        <ObjectUnionOf>
+            <Class IRI="overExpression"/>
+            <Class abbreviatedIRI="efo:EFO_0000506"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="usesTechnology"/>
+        <Class IRI="Proteomics"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="usesTechnology"/>
+        <Class IRI="Transcriptomics"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="&apos;encodes&apos;"/>
+        <Class abbreviatedIRI="ncit:C16612"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="&apos;functionOf&apos;"/>
+        <Class abbreviatedIRI="obo:GO_0003674"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="&apos;hasFunction&apos;"/>
+        <Class abbreviatedIRI="ncit:C26548"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="&apos;hasParticipant&apos;"/>
+        <Class abbreviatedIRI="obo:GO_0008150"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="&apos;hasProduct&apos;"/>
+        <Class abbreviatedIRI="ncit:C26548"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="&apos;isEncodedBy&apos;"/>
+        <Class abbreviatedIRI="ncit:C16612"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="&apos;isRepresentedBy&apos;"/>
+        <Class abbreviatedIRI="ncit:C26548"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="&apos;isTranslatedFrom&apos;"/>
+        <Class abbreviatedIRI="ncit:C17021"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="&apos;isTranslatedInto&apos;"/>
+        <Class abbreviatedIRI="ncit:C813"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="&apos;locatedIn&apos;"/>
+        <Class abbreviatedIRI="ncit:C26548"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="&apos;locationOf&apos;"/>
+        <Class abbreviatedIRI="obo:GO_0005575"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="&apos;participatesIn&apos;"/>
+        <Class abbreviatedIRI="ncit:C26548"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="&apos;represents&apos;"/>
+        <Class IRI="MoleculeID"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="belongsTo"/>
+        <Class abbreviatedIRI="ncit:C14250"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasAssay"/>
+        <Class IRI="OmicsAssay"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasBaselineExpressionLevel"/>
+        <Class abbreviatedIRI="ns:BaselineExpressionLevel"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasDoi"/>
+        <Class abbreviatedIRI="ncit:C71462"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasExperimentalConditions"/>
+        <Class IRI="ExperimentalConditions"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasExperimentalVariable"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI="obo:PSO_0000001"/>
+            <Class abbreviatedIRI="efo:EFO_0000510"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasExpressionChange"/>
+        <Class IRI="DifferentialExpressionChange"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasExpressionResult"/>
+        <ObjectUnionOf>
+            <Class IRI="DifferentialExpressionChange"/>
+            <Class abbreviatedIRI="ns:BaselineExpressionLevel"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasExpressionStudy"/>
+        <Class IRI="ExpressionStudy"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasFileID"/>
+        <Class IRI="FileId"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasGeneID"/>
+        <Class abbreviatedIRI="ncit:C43568"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasGeneName"/>
+        <Class IRI="GeneName"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasGeneSymbol"/>
+        <Class abbreviatedIRI="ncit:C43568"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasOmicsFile"/>
+        <Class IRI="OmicsFile"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasPlantStructure"/>
+        <Class abbreviatedIRI="obo:PO_0009011"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasProteinID"/>
+        <Class abbreviatedIRI="ncit:C165061"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasPubMedId"/>
+        <Class abbreviatedIRI="obo:OBI_0001617"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasTaxonId"/>
+        <Class abbreviatedIRI="ncit:C179773"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="isBaselineExpressionLevelOf"/>
+        <Class IRI="BaselineExpressionStudy"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="isDoiOf"/>
+        <Class IRI="omicsoaper"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="isExperimentalConditionsOf"/>
+        <Class IRI="OmicsAssay"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="isExpressionChangeOf"/>
+        <Class IRI="DifferentialExpressionStudy"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="isExpressionResultOf"/>
+        <Class abbreviatedIRI="ncit:C26548"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="isExpressionResultOf"/>
+        <Class IRI="ExpressionStudy"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="isGeneNameOf"/>
+        <Class abbreviatedIRI="ncit:C16612"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="isGeneSymbolOf"/>
+        <Class abbreviatedIRI="ncit:C16612"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="isPlantStructureOf"/>
+        <Class IRI="ExperimentalConditions"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="isPubMedIdOf"/>
+        <Class IRI="omicsoaper"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="isStudiedIn"/>
+        <Class IRI="Proteomics"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="isStudiedIn"/>
+        <Class IRI="Transcriptomics"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="isStudiedIn"/>
+        <Class IRI="omicsoaper"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="isTargetedBy"/>
+        <ObjectUnionOf>
+            <Class IRI="overExpression"/>
+            <Class abbreviatedIRI="efo:EFO_0000506"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="isUsedIn"/>
+        <Class IRI="Proteomics"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="isUsedIn"/>
+        <Class IRI="Transcriptomics"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="isVariableOf"/>
+        <Class IRI="ExperimentalConditions"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="studiesCell"/>
+        <Class IRI="CellType"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="studiesGeneProduct"/>
+        <Class abbreviatedIRI="ncit:C26548"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="targets"/>
+        <Class abbreviatedIRI="ncit:C16612"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="usesTechnology"/>
+        <Class IRI="ProteomicsTechnology"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="usesTechnology"/>
+        <Class IRI="TranscriptomicsTechnology"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="&apos;encodes&apos;"/>
+        <Class abbreviatedIRI="ncit:C26548"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="&apos;functionOf&apos;"/>
+        <Class abbreviatedIRI="ncit:C26548"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="&apos;hasFunction&apos;"/>
+        <Class abbreviatedIRI="obo:GO_0003674"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="&apos;hasParticipant&apos;"/>
+        <Class abbreviatedIRI="ncit:C26548"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="&apos;hasProduct&apos;"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI="ncit:C17021"/>
+            <Class abbreviatedIRI="ncit:C26549"/>
+            <Class abbreviatedIRI="ncit:C813"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="&apos;isEncodedBy&apos;"/>
+        <Class abbreviatedIRI="ncit:C26548"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="&apos;isRepresentedBy&apos;"/>
+        <Class IRI="MoleculeID"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="&apos;isTranslatedFrom&apos;"/>
+        <Class abbreviatedIRI="ncit:C813"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="&apos;isTranslatedInto&apos;"/>
+        <Class abbreviatedIRI="ncit:C17021"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="&apos;locatedIn&apos;"/>
+        <Class abbreviatedIRI="obo:GO_0005575"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="&apos;locationOf&apos;"/>
+        <Class abbreviatedIRI="ncit:C26548"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="&apos;participatesIn&apos;"/>
+        <Class abbreviatedIRI="obo:GO_0008150"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="&apos;represents&apos;"/>
+        <Class abbreviatedIRI="ncit:C26548"/>
+    </ObjectPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="bioinformaticTool"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="experimentalMetadata"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="expressionUnits"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="filename"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasPvalue"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="log2FoldChange"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="proteinSequence"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="obo:OBI_0001937"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dc:date"/>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>ncit:C14250</AbbreviatedIRI>
+        <Literal>C14250</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>ncit:C165061</AbbreviatedIRI>
+        <Literal>C165061</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>ncit:C16612</AbbreviatedIRI>
+        <Literal>C16612</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>ncit:C17021</AbbreviatedIRI>
+        <Literal>C17021</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>ncit:C179773</AbbreviatedIRI>
+        <Literal>C179773</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>ncit:C26548</AbbreviatedIRI>
+        <Literal>C26548</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>ncit:C26549</AbbreviatedIRI>
+        <Literal>C26549</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>ncit:C43568</AbbreviatedIRI>
+        <Literal>C43568</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>ncit:C71462</AbbreviatedIRI>
+        <Literal>C71462</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>ncit:C813</AbbreviatedIRI>
+        <Literal>C813</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>BaselineExpressionStudy</IRI>
+        <Literal>Baseline Expression Study</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CellType</IRI>
+        <Literal>Cell Type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DifferentialExpressionChange</IRI>
+        <Literal>Differential Expression Change</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DifferentialExpressionStudy</IRI>
+        <Literal>Differential Expression Study</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DownRegulation</IRI>
+        <Literal>Down Regulation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ExperimentalConditions</IRI>
+        <Literal>Experimental Conditions</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ExpressionStudy</IRI>
+        <Literal>Expression Study</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>FileId</IRI>
+        <Literal>File Id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>GeneName</IRI>
+        <Literal>Gene Name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Icat</IRI>
+        <Literal>Icat</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>MoleculeID</IRI>
+        <Literal>Molecule I D</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>NanoporeSequencing</IRI>
+        <Literal>Nanopore Sequencing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>NoChange</IRI>
+        <Literal>No Change</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>OmicsAssay</IRI>
+        <Literal>Omics Assay</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>OmicsFile</IRI>
+        <Literal>Omics File</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>OmicsTechnology</IRI>
+        <Literal>Omics Technology</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Pla</IRI>
+        <Literal>Pla</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ProteinMicroarray</IRI>
+        <Literal>Protein Microarray</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Proteomics</IRI>
+        <Literal>Proteomics</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ProteomicsTechnology</IRI>
+        <Literal>Proteomics Technology</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>RiboSeq</IRI>
+        <Literal>Ribo Seq</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>RnaMicroarray</IRI>
+        <Literal>Rna Microarray</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>RtqPcr</IRI>
+        <Literal>Rtq Pcr</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>SILAC</IRI>
+        <Literal>S I L A C</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ShotgunProteomics</IRI>
+        <Literal>Shotgun Proteomics</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Srm</IRI>
+        <Literal>Srm</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Transcriptomics</IRI>
+        <Literal>Transcriptomics</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>TranscriptomicsTechnology</IRI>
+        <Literal>Transcriptomics Technology</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>UpRegulation</IRI>
+        <Literal>Up Regulation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>WesternBlot</IRI>
+        <Literal>Western Blot</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>belongsTo</IRI>
+        <Literal>belongs to</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>bioinformaticTool</IRI>
+        <Literal>bioinformatic tool</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>cage</IRI>
+        <Literal>cage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>cellName</IRI>
+        <Literal>cell name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>experimentalMetadata</IRI>
+        <Literal>experimental metadata</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>expressionUnits</IRI>
+        <Literal>expression units</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>filename</IRI>
+        <Literal>filename</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>geneSeq</IRI>
+        <Literal>gene seq</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>geneSeqLength</IRI>
+        <Literal>gene seq length</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasAssay</IRI>
+        <Literal>has assay</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasBaselineExpressionLevel</IRI>
+        <Literal>has baseline expression level</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasDoi</IRI>
+        <Literal>has doi</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasExperimentalConditions</IRI>
+        <Literal>has experimental conditions</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasExperimentalVariable</IRI>
+        <Literal>has experimental variable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasExpressionChange</IRI>
+        <Literal>has expression change</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasExpressionResult</IRI>
+        <Literal>has expression result</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasExpressionStudy</IRI>
+        <Literal>has expression study</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasFileID</IRI>
+        <Literal>has file i d</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasFormat</IRI>
+        <Literal>has format</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasGeneID</IRI>
+        <Literal>has gene i d</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasGeneName</IRI>
+        <Literal>has gene name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasGeneSymbol</IRI>
+        <Literal>has gene symbol</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasName</IRI>
+        <Literal>has name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasOmicsFile</IRI>
+        <Literal>has omics file</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasPlantStructure</IRI>
+        <Literal>has plant structure</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasProteinID</IRI>
+        <Literal>has protein i d</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasPubMedId</IRI>
+        <Literal>has pub med id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasPvalue</IRI>
+        <Literal>has pvalue</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasTaxonId</IRI>
+        <Literal>has taxon id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isBaselineExpressionLevelOf</IRI>
+        <Literal>is baseline expression level of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isDoiOf</IRI>
+        <Literal>is doi of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isExperimentalConditionsOf</IRI>
+        <Literal>is experimental conditions of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isExpressionChangeOf</IRI>
+        <Literal>is expression change of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isExpressionResultOf</IRI>
+        <Literal>is expression result of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isGeneNameOf</IRI>
+        <Literal>is gene name of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isGeneSymbolOf</IRI>
+        <Literal>is gene symbol of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isPlanStructureOf</IRI>
+        <Literal>is plan structure of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isPlantStructureOf</IRI>
+        <Literal>is plant structure of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isPubMedIdOf</IRI>
+        <Literal>is pub med id of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isStudiedIn</IRI>
+        <Literal>is studied in</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isTargetedBy</IRI>
+        <Literal>is targeted by</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isUsedIn</IRI>
+        <Literal>is used in</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isVariableOf</IRI>
+        <Literal>is variable of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>log2FoldChange</IRI>
+        <Literal>log2 fold change</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>omicsoaper</IRI>
+        <Literal>omicsoaper</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>overExpression</IRI>
+        <Literal>over Expression</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>proteinSequence</IRI>
+        <Literal>protein sequence</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>qPcr</IRI>
+        <Literal>q Pcr</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>scRnaSeq</IRI>
+        <Literal>sc Rna Seq</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>structureName</IRI>
+        <Literal>structure name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>studiesCell</IRI>
+        <Literal>studies cell</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>studiesGeneProduct</IRI>
+        <Literal>studies gene product</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>targets</IRI>
+        <Literal>targets</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>usesTechnology</IRI>
+        <Literal>uses technology</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>&apos;encodes&apos;</IRI>
+        <Literal>&apos;encodes&apos;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>&apos;functionOf&apos;</IRI>
+        <Literal>&apos;function of&apos;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>&apos;hasFunction&apos;</IRI>
+        <Literal>&apos;has function&apos;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>&apos;hasParticipant&apos;</IRI>
+        <Literal>&apos;has participant&apos;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>&apos;hasProduct&apos;</IRI>
+        <Literal>&apos;has product&apos;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>&apos;isEncodedBy&apos;</IRI>
+        <Literal>&apos;is encoded by&apos;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>&apos;isRepresentedBy&apos;</IRI>
+        <Literal>&apos;is represented by&apos;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>&apos;isTranslatedFrom&apos;</IRI>
+        <Literal>&apos;is translated from&apos;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>&apos;isTranslatedInto&apos;</IRI>
+        <Literal>&apos;is translated into&apos;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>&apos;locatedIn&apos;</IRI>
+        <Literal>&apos;located in&apos;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>&apos;locationOf&apos;</IRI>
+        <Literal>&apos;location of&apos;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>&apos;participatesIn&apos;</IRI>
+        <Literal>&apos;participates in&apos;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>&apos;represents&apos;</IRI>
+        <Literal>&apos;represents&apos;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>obo:GO_0003674</AbbreviatedIRI>
+        <Literal>G O_0003674</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>obo:GO_0005575</AbbreviatedIRI>
+        <Literal>G O_0005575</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>obo:GO_0008150</AbbreviatedIRI>
+        <Literal>G O_0008150</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>obo:OBI0001271</AbbreviatedIRI>
+        <Literal>O B I0001271</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>obo:OBI0003097</AbbreviatedIRI>
+        <Literal>O B I0003097</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>obo:OBI_0001617</AbbreviatedIRI>
+        <Literal>O B I_0001617</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>obo:OBI_0001937</AbbreviatedIRI>
+        <Literal>o b i_0001937</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>obo:PO_0009011</AbbreviatedIRI>
+        <Literal>P O_0009011</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>obo:PSO_0000001</AbbreviatedIRI>
+        <Literal>P S O_0000001</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>obo:PSO_0000011</AbbreviatedIRI>
+        <Literal>P S O_0000011</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>obo:PSO_0000012</AbbreviatedIRI>
+        <Literal>P S O_0000012</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>obo:RO_0000056</AbbreviatedIRI>
+        <Literal>r o_0000056</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>obo:RO_0000057</AbbreviatedIRI>
+        <Literal>r o_0000057</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>obo:RO_0000079</AbbreviatedIRI>
+        <Literal>r o_0000079</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>obo:RO_0000085</AbbreviatedIRI>
+        <Literal>r o_0000085</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>obo:RO_0001015</AbbreviatedIRI>
+        <Literal>r o_0001015</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>obo:RO_0001025</AbbreviatedIRI>
+        <Literal>r o_0001025</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dc:abstract</AbbreviatedIRI>
+        <Literal>abstract</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dc:creator</AbbreviatedIRI>
+        <Literal>creator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dc:date</AbbreviatedIRI>
+        <Literal>date</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dc:title</AbbreviatedIRI>
+        <Literal>title</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>sio:SIO_000205</AbbreviatedIRI>
+        <Literal>s i o_000205</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>sio:SIO_000210</AbbreviatedIRI>
+        <Literal>s i o_000210</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>sio:SIO_010078</AbbreviatedIRI>
+        <Literal>s i o_010078</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>sio:SIO_010079</AbbreviatedIRI>
+        <Literal>s i o_010079</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>sio:SIO_010082</AbbreviatedIRI>
+        <Literal>s i o_010082</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>sio:SIO_010083</AbbreviatedIRI>
+        <Literal>s i o_010083</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>efo:EFO_0000506</AbbreviatedIRI>
+        <Literal>E F O_0000506</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>efo:EFO_0000510</AbbreviatedIRI>
+        <Literal>E F O_0000510</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>ns:BaselineExpressionLevel</AbbreviatedIRI>
+        <Literal>Baseline Expression Level</Literal>
+    </AnnotationAssertion>
+    <AnnotationPropertyRange>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+        <AbbreviatedIRI>xsd:string</AbbreviatedIRI>
+    </AnnotationPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
