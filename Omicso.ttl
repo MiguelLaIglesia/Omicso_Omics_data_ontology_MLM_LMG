@@ -1,0 +1,1232 @@
+@prefix : <http://omicso#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ns: <http://www.owl-ontologies.com/ns#> .
+@prefix efo: <http://www.ebi.ac.uk/efo/> .
+@prefix mod: <https://w3id.org/mod#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix omicso: <http://omicso#> .
+@base <http://omicso#> .
+
+<http://omicso#> rdf:type owl:Ontology ;
+                  dc:created "2024-01-01"^^xsd:date ;
+                  dc:creator "Lucia Muñoz Gil" ,
+                             "Miguel La Iglesia Mirones" ;
+                  dc:description "An ontology for omics data query and annotation"@en ;
+                  dc:license <https://creativecommons.org/licenses/by/4.0/> ;
+                  dc:title "Omics Data Ontology (omicso)" ;
+                  mod:createdWith <https://chowlk.linkeddata.es/> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/created
+dc:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/license
+dc:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty ;
+         rdfs:range xsd:string .
+
+
+###  https://w3id.org/mod#createdWith
+mod:createdWith rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://omicso#belongsTo
+omicso:belongsTo rdf:type owl:ObjectProperty ;
+                 rdfs:domain obo:PO_0009011 ;
+                 rdfs:range ncit:C14250 ;
+                 rdfs:label "belongs to" .
+
+
+###  http://omicso#hasAssay
+omicso:hasAssay rdf:type owl:ObjectProperty ;
+                rdfs:domain omicso:omicsoaper ;
+                rdfs:range omicso:OmicsAssay ;
+                rdfs:label "has assay" .
+
+
+###  http://omicso#hasBaselineExpressionLevel
+omicso:hasBaselineExpressionLevel rdf:type owl:ObjectProperty ;
+                                  owl:inverseOf omicso:isBaselineExpressionLevelOf ;
+                                  rdfs:domain omicso:BaselineExpressionStudy ;
+                                  rdfs:range ns:BaselineExpressionLevel ;
+                                  rdfs:label "has baseline expression level" .
+
+
+###  http://omicso#hasDoi
+omicso:hasDoi rdf:type owl:ObjectProperty ;
+              owl:inverseOf omicso:isDoiOf ;
+              rdfs:domain omicso:omicsoaper ;
+              rdfs:range ncit:C71462 ;
+              rdfs:label "has doi" .
+
+
+###  http://omicso#hasExperimentalConditions
+omicso:hasExperimentalConditions rdf:type owl:ObjectProperty ;
+                                 owl:inverseOf omicso:isExperimentalConditionsOf ;
+                                 rdfs:domain omicso:OmicsAssay ;
+                                 rdfs:range omicso:ExperimentalConditions ;
+                                 rdfs:label "has experimental conditions" .
+
+
+###  http://omicso#hasExperimentalVariable
+omicso:hasExperimentalVariable rdf:type owl:ObjectProperty ;
+                               owl:inverseOf omicso:isVariableOf ;
+                               rdfs:domain omicso:ExperimentalConditions ;
+                               rdfs:range [ rdf:type owl:Class ;
+                                            owl:unionOf ( obo:PSO_0000001
+                                                          efo:EFO_0000510
+                                                        )
+                                          ] ;
+                               rdfs:label "has experimental variable" .
+
+
+###  http://omicso#hasExpressionChange
+omicso:hasExpressionChange rdf:type owl:ObjectProperty ;
+                           owl:inverseOf omicso:isExpressionChangeOf ;
+                           rdfs:domain omicso:DifferentialExpressionStudy ;
+                           rdfs:range omicso:DifferentialExpressionChange ;
+                           rdfs:label "has expression change" .
+
+
+###  http://omicso#hasExpressionResult
+omicso:hasExpressionResult rdf:type owl:ObjectProperty ;
+                           owl:inverseOf omicso:isExpressionResultOf ;
+                           rdfs:domain ncit:C26548 ,
+                                       omicso:ExpressionStudy ;
+                           rdfs:range [ rdf:type owl:Class ;
+                                        owl:unionOf ( omicso:DifferentialExpressionChange
+                                                      ns:BaselineExpressionLevel
+                                                    )
+                                      ] ;
+                           rdfs:label "has expression result" .
+
+
+###  http://omicso#hasExpressionStudy
+omicso:hasExpressionStudy rdf:type owl:ObjectProperty ;
+                          rdfs:domain omicso:OmicsAssay ;
+                          rdfs:range omicso:ExpressionStudy ;
+                          rdfs:label "has expression study" .
+
+
+###  http://omicso#hasFileID
+omicso:hasFileID rdf:type owl:ObjectProperty ;
+                 rdfs:domain omicso:OmicsFile ;
+                 rdfs:range omicso:FileId ;
+                 rdfs:label "has file i d" .
+
+
+###  http://omicso#hasGeneID
+omicso:hasGeneID rdf:type owl:ObjectProperty ;
+                 rdfs:domain omicso:MoleculeID ;
+                 rdfs:range ncit:C43568 ;
+                 rdfs:label "has gene i d" .
+
+
+###  http://omicso#hasGeneName
+omicso:hasGeneName rdf:type owl:ObjectProperty ;
+                   owl:inverseOf omicso:isGeneNameOf ;
+                   rdfs:domain ncit:C16612 ;
+                   rdfs:range omicso:GeneName ;
+                   rdfs:label "has gene name" .
+
+
+###  http://omicso#hasGeneSymbol
+omicso:hasGeneSymbol rdf:type owl:ObjectProperty ;
+                     owl:inverseOf omicso:isGeneSymbolOf ;
+                     rdfs:domain ncit:C16612 ;
+                     rdfs:range ncit:C43568 ;
+                     rdfs:label "has gene symbol" .
+
+
+###  http://omicso#hasOmicsFile
+omicso:hasOmicsFile rdf:type owl:ObjectProperty ;
+                    rdfs:domain omicso:OmicsAssay ;
+                    rdfs:range omicso:OmicsFile ;
+                    rdfs:label "has omics file" .
+
+
+###  http://omicso#hasPlantStructure
+omicso:hasPlantStructure rdf:type owl:ObjectProperty ;
+                         owl:inverseOf omicso:isPlanStructureOf ;
+                         rdfs:domain omicso:ExperimentalConditions ;
+                         rdfs:range obo:PO_0009011 ;
+                         rdfs:label "has plant structure" .
+
+
+###  http://omicso#hasProteinID
+omicso:hasProteinID rdf:type owl:ObjectProperty ;
+                    rdfs:domain omicso:MoleculeID ;
+                    rdfs:range ncit:C165061 ;
+                    rdfs:label "has protein i d" .
+
+
+###  http://omicso#hasPubMedId
+omicso:hasPubMedId rdf:type owl:ObjectProperty ;
+                   owl:inverseOf omicso:isPubMedIdOf ;
+                   rdfs:domain omicso:omicsoaper ;
+                   rdfs:range obo:OBI_0001617 ;
+                   rdfs:label "has pub med id" .
+
+
+###  http://omicso#hasTaxonId
+omicso:hasTaxonId rdf:type owl:ObjectProperty ;
+                  rdfs:domain ncit:C14250 ;
+                  rdfs:range ncit:C179773 ;
+                  rdfs:label "has taxon id" .
+
+
+###  http://omicso#isBaselineExpressionLevelOf
+omicso:isBaselineExpressionLevelOf rdf:type owl:ObjectProperty ;
+                                   rdfs:domain ns:BaselineExpressionLevel ;
+                                   rdfs:range omicso:BaselineExpressionStudy ;
+                                   rdfs:label "is baseline expression level of" .
+
+
+###  http://omicso#isDoiOf
+omicso:isDoiOf rdf:type owl:ObjectProperty ;
+               rdfs:domain ncit:C71462 ;
+               rdfs:range omicso:omicsoaper ;
+               rdfs:label "is doi of" .
+
+
+###  http://omicso#isExperimentalConditionsOf
+omicso:isExperimentalConditionsOf rdf:type owl:ObjectProperty ;
+                                  rdfs:domain omicso:ExperimentalConditions ;
+                                  rdfs:range omicso:OmicsAssay ;
+                                  rdfs:label "is experimental conditions of" .
+
+
+###  http://omicso#isExpressionChangeOf
+omicso:isExpressionChangeOf rdf:type owl:ObjectProperty ;
+                            rdfs:domain omicso:DifferentialExpressionChange ;
+                            rdfs:range omicso:DifferentialExpressionStudy ;
+                            rdfs:label "is expression change of" .
+
+
+###  http://omicso#isExpressionResultOf
+omicso:isExpressionResultOf rdf:type owl:ObjectProperty ;
+                            rdfs:domain [ rdf:type owl:Class ;
+                                          owl:unionOf ( omicso:DifferentialExpressionChange
+                                                        ns:BaselineExpressionLevel
+                                                      )
+                                        ] ;
+                            rdfs:range ncit:C26548 ,
+                                       omicso:ExpressionStudy ;
+                            rdfs:label "is expression result of" .
+
+
+###  http://omicso#isGeneNameOf
+omicso:isGeneNameOf rdf:type owl:ObjectProperty ;
+                    rdfs:domain omicso:GeneName ;
+                    rdfs:range ncit:C16612 ;
+                    rdfs:label "is gene name of" .
+
+
+###  http://omicso#isGeneSymbolOf
+omicso:isGeneSymbolOf rdf:type owl:ObjectProperty ;
+                      rdfs:domain ncit:C43568 ;
+                      rdfs:range ncit:C16612 ;
+                      rdfs:label "is gene symbol of" .
+
+
+###  http://omicso#isPlanStructureOf
+omicso:isPlanStructureOf rdf:type owl:ObjectProperty ;
+                         rdfs:label "is plan structure of" .
+
+
+###  http://omicso#isPlantStructureOf
+omicso:isPlantStructureOf rdf:type owl:ObjectProperty ;
+                          rdfs:domain obo:PO_0009011 ;
+                          rdfs:range omicso:ExperimentalConditions ;
+                          rdfs:label "is plant structure of" .
+
+
+###  http://omicso#isPubMedIdOf
+omicso:isPubMedIdOf rdf:type owl:ObjectProperty ;
+                    rdfs:domain obo:OBI_0001617 ;
+                    rdfs:range omicso:omicsoaper ;
+                    rdfs:label "is pub med id of" .
+
+
+###  http://omicso#isStudiedIn
+omicso:isStudiedIn rdf:type owl:ObjectProperty ;
+                   owl:inverseOf omicso:studiesGeneProduct ;
+                   rdfs:domain ncit:C17021 ,
+                               ncit:C26548 ,
+                               [ rdf:type owl:Class ;
+                                 owl:unionOf ( ncit:C26549
+                                               ncit:C813
+                                             )
+                               ] ;
+                   rdfs:range omicso:Proteomics ,
+                              omicso:Transcriptomics ,
+                              omicso:omicsoaper ;
+                   rdfs:label "is studied in" .
+
+
+###  http://omicso#isTargetedBy
+omicso:isTargetedBy rdf:type owl:ObjectProperty ;
+                    owl:inverseOf omicso:targets ;
+                    rdfs:domain ncit:C16612 ;
+                    rdfs:range [ rdf:type owl:Class ;
+                                 owl:unionOf ( omicso:overExpression
+                                               efo:EFO_0000506
+                                             )
+                               ] ;
+                    rdfs:label "is targeted by" .
+
+
+###  http://omicso#isUsedIn
+omicso:isUsedIn rdf:type owl:ObjectProperty ;
+                owl:inverseOf omicso:usesTechnology ;
+                rdfs:domain omicso:ProteomicsTechnology ,
+                            omicso:TranscriptomicsTechnology ;
+                rdfs:range omicso:Proteomics ,
+                           omicso:Transcriptomics ;
+                rdfs:label "is used in" .
+
+
+###  http://omicso#isVariableOf
+omicso:isVariableOf rdf:type owl:ObjectProperty ;
+                    rdfs:domain [ rdf:type owl:Class ;
+                                  owl:unionOf ( obo:PSO_0000001
+                                                efo:EFO_0000510
+                                              )
+                                ] ;
+                    rdfs:range omicso:ExperimentalConditions ;
+                    rdfs:label "is variable of" .
+
+
+###  http://omicso#studiesCell
+omicso:studiesCell rdf:type owl:ObjectProperty ;
+                   rdfs:domain omicso:ExperimentalConditions ;
+                   rdfs:range omicso:CellType ;
+                   rdfs:label "studies cell" .
+
+
+###  http://omicso#studiesGeneProduct
+omicso:studiesGeneProduct rdf:type owl:ObjectProperty ;
+                          rdfs:domain omicso:omicsoaper ;
+                          rdfs:range ncit:C26548 ;
+                          rdfs:label "studies gene product" .
+
+
+###  http://omicso#targets
+omicso:targets rdf:type owl:ObjectProperty ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( omicso:overExpression
+                                           efo:EFO_0000506
+                                         )
+                           ] ;
+               rdfs:range ncit:C16612 ;
+               rdfs:label "targets" .
+
+
+###  http://omicso#usesTechnology
+omicso:usesTechnology rdf:type owl:ObjectProperty ;
+                      rdfs:domain omicso:Proteomics ,
+                                  omicso:Transcriptomics ;
+                      rdfs:range omicso:ProteomicsTechnology ,
+                                 omicso:TranscriptomicsTechnology ;
+                      rdfs:label "uses technology" .
+
+
+###  http://omicso#'encodes'
+<http://omicso#'encodes'> rdf:type owl:ObjectProperty ;
+                          rdfs:domain ncit:C16612 ;
+                          rdfs:range ncit:C26548 ;
+                          rdfs:label "'encodes'" .
+
+
+###  http://omicso#'functionOf'
+<http://omicso#'functionOf'> rdf:type owl:ObjectProperty ;
+                             rdfs:domain obo:GO_0003674 ;
+                             rdfs:range ncit:C26548 ;
+                             rdfs:label "'function of'" .
+
+
+###  http://omicso#'hasFunction'
+<http://omicso#'hasFunction'> rdf:type owl:ObjectProperty ;
+                              rdfs:domain ncit:C26548 ;
+                              rdfs:range obo:GO_0003674 ;
+                              rdfs:label "'has function'" .
+
+
+###  http://omicso#'hasParticipant'
+<http://omicso#'hasParticipant'> rdf:type owl:ObjectProperty ;
+                                 rdfs:domain obo:GO_0008150 ;
+                                 rdfs:range ncit:C26548 ;
+                                 rdfs:label "'has participant'" .
+
+
+###  http://omicso#'hasProduct'
+<http://omicso#'hasProduct'> rdf:type owl:ObjectProperty ;
+                             rdfs:domain ncit:C26548 ;
+                             rdfs:range [ rdf:type owl:Class ;
+                                          owl:unionOf ( ncit:C17021
+                                                        ncit:C26549
+                                                        ncit:C813
+                                                      )
+                                        ] ;
+                             rdfs:label "'has product'" .
+
+
+###  http://omicso#'isEncodedBy'
+<http://omicso#'isEncodedBy'> rdf:type owl:ObjectProperty ;
+                              rdfs:domain ncit:C16612 ;
+                              rdfs:range ncit:C26548 ;
+                              rdfs:label "'is encoded by'" .
+
+
+###  http://omicso#'isRepresentedBy'
+<http://omicso#'isRepresentedBy'> rdf:type owl:ObjectProperty ;
+                                  rdfs:domain ncit:C26548 ;
+                                  rdfs:range omicso:MoleculeID ;
+                                  rdfs:label "'is represented by'" .
+
+
+###  http://omicso#'isTranslatedFrom'
+<http://omicso#'isTranslatedFrom'> rdf:type owl:ObjectProperty ;
+                                   rdfs:domain ncit:C17021 ;
+                                   rdfs:range ncit:C813 ;
+                                   rdfs:label "'is translated from'" .
+
+
+###  http://omicso#'isTranslatedInto'
+<http://omicso#'isTranslatedInto'> rdf:type owl:ObjectProperty ;
+                                   rdfs:domain ncit:C813 ;
+                                   rdfs:range ncit:C17021 ;
+                                   rdfs:label "'is translated into'" .
+
+
+###  http://omicso#'locatedIn'
+<http://omicso#'locatedIn'> rdf:type owl:ObjectProperty ;
+                            rdfs:domain ncit:C26548 ;
+                            rdfs:range obo:GO_0005575 ;
+                            rdfs:label "'located in'" .
+
+
+###  http://omicso#'locationOf'
+<http://omicso#'locationOf'> rdf:type owl:ObjectProperty ;
+                             rdfs:domain obo:GO_0005575 ;
+                             rdfs:range ncit:C26548 ;
+                             rdfs:label "'location of'" .
+
+
+###  http://omicso#'participatesIn'
+<http://omicso#'participatesIn'> rdf:type owl:ObjectProperty ;
+                                 rdfs:domain ncit:C26548 ;
+                                 rdfs:range obo:GO_0008150 ;
+                                 rdfs:label "'participates in'" .
+
+
+###  http://omicso#'represents'
+<http://omicso#'represents'> rdf:type owl:ObjectProperty ;
+                             rdfs:domain omicso:MoleculeID ;
+                             rdfs:range ncit:C26548 ;
+                             rdfs:label "'represents'" .
+
+
+###  http://purl.obolibrary.org/obo/RO_0000056
+obo:RO_0000056 rdf:type owl:ObjectProperty ;
+               owl:inverseOf obo:RO_0000057 ;
+               rdfs:label "r o_0000056" .
+
+
+###  http://purl.obolibrary.org/obo/RO_0000057
+obo:RO_0000057 rdf:type owl:ObjectProperty ;
+               rdfs:label "r o_0000057" .
+
+
+###  http://purl.obolibrary.org/obo/RO_0000079
+obo:RO_0000079 rdf:type owl:ObjectProperty ;
+               owl:inverseOf obo:RO_0000085 ;
+               rdfs:label "r o_0000079" .
+
+
+###  http://purl.obolibrary.org/obo/RO_0000085
+obo:RO_0000085 rdf:type owl:ObjectProperty ;
+               rdfs:label "r o_0000085" .
+
+
+###  http://purl.obolibrary.org/obo/RO_0001015
+obo:RO_0001015 rdf:type owl:ObjectProperty ;
+               owl:inverseOf obo:RO_0001025 ;
+               rdfs:label "r o_0001015" .
+
+
+###  http://purl.obolibrary.org/obo/RO_0001025
+obo:RO_0001025 rdf:type owl:ObjectProperty ;
+               rdfs:label "r o_0001025" .
+
+
+###  http://semanticscience.org/resource/SIO_000205
+sio:SIO_000205 rdf:type owl:ObjectProperty ;
+               owl:inverseOf sio:SIO_000210 ;
+               rdfs:label "s i o_000205" .
+
+
+###  http://semanticscience.org/resource/SIO_000210
+sio:SIO_000210 rdf:type owl:ObjectProperty ;
+               rdfs:label "s i o_000210" .
+
+
+###  http://semanticscience.org/resource/SIO_010078
+sio:SIO_010078 rdf:type owl:ObjectProperty ;
+               owl:inverseOf sio:SIO_010079 ;
+               rdfs:label "s i o_010078" .
+
+
+###  http://semanticscience.org/resource/SIO_010079
+sio:SIO_010079 rdf:type owl:ObjectProperty ;
+               rdfs:label "s i o_010079" .
+
+
+###  http://semanticscience.org/resource/SIO_010082
+sio:SIO_010082 rdf:type owl:ObjectProperty ;
+               owl:inverseOf sio:SIO_010083 ;
+               rdfs:label "s i o_010082" .
+
+
+###  http://semanticscience.org/resource/SIO_010083
+sio:SIO_010083 rdf:type owl:ObjectProperty ;
+               rdfs:label "s i o_010083" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://omicso#bioinformaticTool
+omicso:bioinformaticTool rdf:type owl:DatatypeProperty ;
+                         rdfs:range xsd:string ;
+                         rdfs:label "bioinformatic tool" .
+
+
+###  http://omicso#cellName
+omicso:cellName rdf:type owl:DatatypeProperty ;
+                rdfs:label "cell name" .
+
+
+###  http://omicso#experimentalMetadata
+omicso:experimentalMetadata rdf:type owl:DatatypeProperty ;
+                            rdfs:range xsd:string ;
+                            rdfs:label "experimental metadata" .
+
+
+###  http://omicso#expressionUnits
+omicso:expressionUnits rdf:type owl:DatatypeProperty ;
+                       rdfs:range xsd:string ;
+                       rdfs:label "expression units" .
+
+
+###  http://omicso#filename
+omicso:filename rdf:type owl:DatatypeProperty ;
+                rdfs:range xsd:string ;
+                rdfs:label "filename" .
+
+
+###  http://omicso#geneSeq
+omicso:geneSeq rdf:type owl:DatatypeProperty ;
+               rdfs:label "gene seq" .
+
+
+###  http://omicso#geneSeqLength
+omicso:geneSeqLength rdf:type owl:DatatypeProperty ;
+                     rdfs:label "gene seq length" .
+
+
+###  http://omicso#hasFormat
+omicso:hasFormat rdf:type owl:DatatypeProperty ;
+                 rdfs:label "has format" .
+
+
+###  http://omicso#hasName
+omicso:hasName rdf:type owl:DatatypeProperty ;
+               rdfs:label "has name" .
+
+
+###  http://omicso#hasPvalue
+omicso:hasPvalue rdf:type owl:DatatypeProperty ;
+                 rdfs:range xsd:float ;
+                 rdfs:label "has pvalue" .
+
+
+###  http://omicso#log2FoldChange
+omicso:log2FoldChange rdf:type owl:DatatypeProperty ;
+                      rdfs:range xsd:float ;
+                      rdfs:label "log2 fold change" .
+
+
+###  http://omicso#proteinSequence
+omicso:proteinSequence rdf:type owl:DatatypeProperty ;
+                       rdfs:range xsd:string ;
+                       rdfs:label "protein sequence" .
+
+
+###  http://omicso#structureName
+omicso:structureName rdf:type owl:DatatypeProperty ;
+                     rdfs:label "structure name" .
+
+
+###  http://purl.obolibrary.org/obo/OBI_0001937
+obo:OBI_0001937 rdf:type owl:DatatypeProperty ;
+                rdfs:range xsd:float ;
+                rdfs:label "o b i_0001937" .
+
+
+###  http://purl.org/dc/elements/1.1/abstract
+dc:abstract rdf:type owl:DatatypeProperty ;
+            rdfs:label "abstract" .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+dc:date rdf:type owl:DatatypeProperty ;
+        rdfs:range xsd:date ;
+        rdfs:label "date" .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C14250
+ncit:C14250 rdf:type owl:Class ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty omicso:hasTaxonId ;
+                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty omicso:hasName ;
+                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                            ] ;
+            rdfs:label "C14250" .
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C165061
+ncit:C165061 rdf:type owl:Class ;
+             owl:disjointWith ncit:C43568 ;
+             rdfs:label "C165061" .
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16612
+ncit:C16612 rdf:type owl:Class ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty omicso:hasGeneName ;
+                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty omicso:hasGeneSymbol ;
+                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty omicso:isTargetedBy ;
+                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty omicso:geneSeq ;
+                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty omicso:geneSeqLength ;
+                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                            ] ;
+            rdfs:label "C16612" .
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17021
+ncit:C17021 rdf:type owl:Class ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty omicso:isStudiedIn ;
+                              owl:allValuesFrom omicso:Proteomics
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty omicso:isStudiedIn ;
+                              owl:minCardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty omicso:proteinSequence ;
+                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                            ] ;
+            rdfs:label "C17021" .
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C179773
+ncit:C179773 rdf:type owl:Class ;
+             rdfs:label "C179773" .
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C26548
+ncit:C26548 rdf:type owl:Class ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty <http://omicso#'hasProduct'> ;
+                              owl:allValuesFrom [ rdf:type owl:Class ;
+                                                  owl:unionOf ( ncit:C17021
+                                                                ncit:C26549
+                                                                ncit:C813
+                                                              )
+                                                ]
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty omicso:hasExpressionResult ;
+                              owl:minCardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty omicso:isStudiedIn ;
+                              owl:minCardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty <http://omicso#'hasProduct'> ;
+                              owl:minCardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty <http://omicso#'isRepresentedBy'> ;
+                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                            ] ;
+            rdfs:label "C26548" .
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C26549
+ncit:C26549 rdf:type owl:Class ;
+            rdfs:label "C26549" .
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C43568
+ncit:C43568 rdf:type owl:Class ;
+            owl:equivalentClass omicso:GeneName ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty omicso:isGeneSymbolOf ;
+                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                            ] ;
+            rdfs:label "C43568" .
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C71462
+ncit:C71462 rdf:type owl:Class ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty omicso:isDoiOf ;
+                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                            ] ;
+            rdfs:label "C71462" .
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C813
+ncit:C813 rdf:type owl:Class ;
+          rdfs:label "C813" .
+
+
+###  http://omicso#BaselineExpressionStudy
+omicso:BaselineExpressionStudy rdf:type owl:Class ;
+                               rdfs:subClassOf omicso:ExpressionStudy ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty omicso:hasBaselineExpressionLevel ;
+                                                 owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                               ] ;
+                               rdfs:label "Baseline Expression Study" .
+
+
+###  http://omicso#CellType
+omicso:CellType rdf:type owl:Class ;
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty omicso:cellName ;
+                                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                                ] ;
+                rdfs:label "Cell Type" .
+
+
+###  http://omicso#DifferentialExpressionChange
+omicso:DifferentialExpressionChange rdf:type owl:Class ;
+                                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                      owl:onProperty omicso:isExpressionChangeOf ;
+                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                    ] ;
+                                    rdfs:label "Differential Expression Change" .
+
+
+###  http://omicso#DifferentialExpressionStudy
+omicso:DifferentialExpressionStudy rdf:type owl:Class ;
+                                   rdfs:subClassOf omicso:ExpressionStudy ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty omicso:hasExpressionChange ;
+                                                     owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                   ] ;
+                                   rdfs:label "Differential Expression Study" .
+
+
+###  http://omicso#DownRegulation
+omicso:DownRegulation rdf:type owl:Class ;
+                      rdfs:label "Down Regulation" .
+
+
+###  http://omicso#ExperimentalConditions
+omicso:ExperimentalConditions rdf:type owl:Class ;
+                              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                owl:onProperty omicso:hasExperimentalVariable ;
+                                                owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                    owl:unionOf ( obo:PSO_0000001
+                                                                                  efo:EFO_0000510
+                                                                                )
+                                                                  ]
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty omicso:hasExperimentalVariable ;
+                                                owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty omicso:hasPlantStructure ;
+                                                owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty omicso:isExperimentalConditionsOf ;
+                                                owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty omicso:studiesCell ;
+                                                owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                              ] ;
+                              rdfs:label "Experimental Conditions" .
+
+
+###  http://omicso#ExpressionStudy
+omicso:ExpressionStudy rdf:type owl:Class ;
+                       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                         owl:onProperty omicso:hasExpressionResult ;
+                                         owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                       ] ;
+                       rdfs:label "Expression Study" .
+
+
+###  http://omicso#FileId
+omicso:FileId rdf:type owl:Class ;
+              rdfs:label "File Id" .
+
+
+###  http://omicso#GeneName
+omicso:GeneName rdf:type owl:Class ;
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty omicso:isGeneNameOf ;
+                                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                                ] ;
+                rdfs:label "Gene Name" .
+
+
+###  http://omicso#Icat
+omicso:Icat rdf:type owl:Class ;
+            rdfs:subClassOf omicso:ProteomicsTechnology ;
+            rdfs:label "Icat" .
+
+
+###  http://omicso#MoleculeID
+omicso:MoleculeID rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty omicso:hasGeneID ;
+                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty omicso:hasProteinID ;
+                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <http://omicso#'represents'> ;
+                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                  ] ;
+                  rdfs:label "Molecule I D" .
+
+
+###  http://omicso#NanoporeSequencing
+omicso:NanoporeSequencing rdf:type owl:Class ;
+                          rdfs:label "Nanopore Sequencing" .
+
+
+###  http://omicso#NoChange
+omicso:NoChange rdf:type owl:Class ;
+                rdfs:label "No Change" .
+
+
+###  http://omicso#OmicsAssay
+omicso:OmicsAssay rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty omicso:hasExpressionStudy ;
+                                    owl:allValuesFrom omicso:ExpressionStudy
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty omicso:hasExperimentalConditions ;
+                                    owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty omicso:hasOmicsFile ;
+                                    owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty omicso:hasExpressionStudy ;
+                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty omicso:bioinformaticTool ;
+                                    owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty omicso:experimentalMetadata ;
+                                    owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                  ] ;
+                  rdfs:label "Omics Assay" .
+
+
+###  http://omicso#OmicsFile
+omicso:OmicsFile rdf:type owl:Class ;
+                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                   owl:onProperty omicso:hasFileID ;
+                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty omicso:filename ;
+                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty omicso:hasFormat ;
+                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                 ] ;
+                 rdfs:label "Omics File" .
+
+
+###  http://omicso#OmicsTechnology
+omicso:OmicsTechnology rdf:type owl:Class ;
+                       rdfs:label "Omics Technology" .
+
+
+###  http://omicso#Pla
+omicso:Pla rdf:type owl:Class ;
+           rdfs:subClassOf omicso:ProteomicsTechnology ;
+           rdfs:label "Pla" .
+
+
+###  http://omicso#ProteinMicroarray
+omicso:ProteinMicroarray rdf:type owl:Class ;
+                         rdfs:subClassOf omicso:ProteomicsTechnology ;
+                         rdfs:label "Protein Microarray" .
+
+
+###  http://omicso#Proteomics
+omicso:Proteomics rdf:type owl:Class ;
+                  rdfs:subClassOf omicso:OmicsAssay ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty omicso:usesTechnology ;
+                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                  ] ;
+                  rdfs:label "Proteomics" .
+
+
+###  http://omicso#ProteomicsTechnology
+omicso:ProteomicsTechnology rdf:type owl:Class ;
+                            rdfs:subClassOf omicso:OmicsTechnology ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty omicso:isUsedIn ;
+                                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                                            ] ;
+                            rdfs:label "Proteomics Technology" .
+
+
+###  http://omicso#RiboSeq
+omicso:RiboSeq rdf:type owl:Class ;
+               rdfs:subClassOf omicso:TranscriptomicsTechnology ;
+               rdfs:label "Ribo Seq" .
+
+
+###  http://omicso#RnaMicroarray
+omicso:RnaMicroarray rdf:type owl:Class ;
+                     rdfs:subClassOf omicso:TranscriptomicsTechnology ;
+                     rdfs:label "Rna Microarray" .
+
+
+###  http://omicso#RtqPcr
+omicso:RtqPcr rdf:type owl:Class ;
+              rdfs:subClassOf omicso:TranscriptomicsTechnology ;
+              rdfs:label "Rtq Pcr" .
+
+
+###  http://omicso#SILAC
+omicso:SILAC rdf:type owl:Class ;
+             rdfs:subClassOf omicso:ProteomicsTechnology ;
+             rdfs:label "S I L A C" .
+
+
+###  http://omicso#ShotgunProteomics
+omicso:ShotgunProteomics rdf:type owl:Class ;
+                         rdfs:subClassOf omicso:ProteomicsTechnology ;
+                         rdfs:label "Shotgun Proteomics" .
+
+
+###  http://omicso#Srm
+omicso:Srm rdf:type owl:Class ;
+           rdfs:subClassOf omicso:ProteomicsTechnology ;
+           rdfs:label "Srm" .
+
+
+###  http://omicso#Transcriptomics
+omicso:Transcriptomics rdf:type owl:Class ;
+                       rdfs:subClassOf omicso:OmicsAssay ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty omicso:usesTechnology ;
+                                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                                       ] ;
+                       rdfs:label "Transcriptomics" .
+
+
+###  http://omicso#TranscriptomicsTechnology
+omicso:TranscriptomicsTechnology rdf:type owl:Class ;
+                                 rdfs:subClassOf omicso:OmicsTechnology ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty omicso:isUsedIn ;
+                                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                 ] ;
+                                 rdfs:label "Transcriptomics Technology" .
+
+
+###  http://omicso#UpRegulation
+omicso:UpRegulation rdf:type owl:Class ;
+                    rdfs:label "Up Regulation" .
+
+
+###  http://omicso#WesternBlot
+omicso:WesternBlot rdf:type owl:Class ;
+                   rdfs:subClassOf omicso:ProteomicsTechnology ;
+                   rdfs:label "Western Blot" .
+
+
+###  http://omicso#cage
+omicso:cage rdf:type owl:Class ;
+            rdfs:subClassOf omicso:TranscriptomicsTechnology ;
+            rdfs:label "cage" .
+
+
+###  http://omicso#omicsoaper
+omicso:omicsoaper rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty omicso:hasAssay ;
+                                    owl:allValuesFrom omicso:OmicsAssay
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty omicso:hasAssay ;
+                                    owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty omicso:studiesGeneProduct ;
+                                    owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty omicso:hasDoi ;
+                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty omicso:hasPubMedId ;
+                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty dc:creator ;
+                                    owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty dc:abstract ;
+                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty dc:date ;
+                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty dc:title ;
+                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                  ] ;
+                  rdfs:label "omicsoaper" .
+
+
+###  http://omicso#overExpression
+omicso:overExpression rdf:type owl:Class ;
+                      rdfs:subClassOf efo:EFO_0000510 ;
+                      owl:disjointWith efo:EFO_0000506 ;
+                      rdfs:label "over Expression" .
+
+
+###  http://omicso#qPcr
+omicso:qPcr rdf:type owl:Class ;
+            rdfs:label "q Pcr" .
+
+
+###  http://omicso#scRnaSeq
+omicso:scRnaSeq rdf:type owl:Class ;
+                rdfs:subClassOf omicso:TranscriptomicsTechnology ;
+                rdfs:label "sc Rna Seq" .
+
+
+###  http://purl.obolibrary.org/obo/GO_0003674
+obo:GO_0003674 rdf:type owl:Class ;
+               rdfs:label "G O_0003674" .
+
+
+###  http://purl.obolibrary.org/obo/GO_0005575
+obo:GO_0005575 rdf:type owl:Class ;
+               rdfs:label "G O_0005575" .
+
+
+###  http://purl.obolibrary.org/obo/GO_0008150
+obo:GO_0008150 rdf:type owl:Class ;
+               rdfs:label "G O_0008150" .
+
+
+###  http://purl.obolibrary.org/obo/OBI0001271
+obo:OBI0001271 rdf:type owl:Class ;
+               rdfs:subClassOf omicso:TranscriptomicsTechnology ;
+               rdfs:label "O B I0001271" .
+
+
+###  http://purl.obolibrary.org/obo/OBI0003097
+obo:OBI0003097 rdf:type owl:Class ;
+               rdfs:subClassOf omicso:ProteomicsTechnology ;
+               rdfs:label "O B I0003097" .
+
+
+###  http://purl.obolibrary.org/obo/OBI_0001617
+obo:OBI_0001617 rdf:type owl:Class ;
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty omicso:isPubMedIdOf ;
+                                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                                ] ;
+                rdfs:label "O B I_0001617" .
+
+
+###  http://purl.obolibrary.org/obo/PO_0009011
+obo:PO_0009011 rdf:type owl:Class ;
+               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty omicso:belongsTo ;
+                                 owl:minCardinality "1"^^xsd:nonNegativeInteger
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty omicso:isPlantStructureOf ;
+                                 owl:minCardinality "1"^^xsd:nonNegativeInteger
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty omicso:structureName ;
+                                 owl:cardinality "1"^^xsd:nonNegativeInteger
+                               ] ;
+               rdfs:label "P O_0009011" .
+
+
+###  http://purl.obolibrary.org/obo/PSO_0000001
+obo:PSO_0000001 rdf:type owl:Class ;
+                rdfs:label "P S O_0000001" .
+
+
+###  http://purl.obolibrary.org/obo/PSO_0000011
+obo:PSO_0000011 rdf:type owl:Class ;
+                rdfs:subClassOf obo:PSO_0000001 ;
+                owl:disjointWith obo:PSO_0000012 ;
+                rdfs:label "P S O_0000011" .
+
+
+###  http://purl.obolibrary.org/obo/PSO_0000012
+obo:PSO_0000012 rdf:type owl:Class ;
+                rdfs:subClassOf obo:PSO_0000001 ;
+                rdfs:label "P S O_0000012" .
+
+
+###  http://www.ebi.ac.uk/efo/EFO_0000506
+efo:EFO_0000506 rdf:type owl:Class ;
+                rdfs:subClassOf efo:EFO_0000510 ;
+                rdfs:label "E F O_0000506" .
+
+
+###  http://www.ebi.ac.uk/efo/EFO_0000510
+efo:EFO_0000510 rdf:type owl:Class ;
+                rdfs:label "E F O_0000510" .
+
+
+###  http://www.owl-ontologies.com/ns#BaselineExpressionLevel
+ns:BaselineExpressionLevel rdf:type owl:Class ;
+                           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                             owl:onProperty omicso:isBaselineExpressionLevelOf ;
+                                             owl:cardinality "1"^^xsd:nonNegativeInteger
+                                           ] ;
+                           rdfs:label "Baseline Expression Level" .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+dc:creator rdfs:label "creator" .
+
+
+dc:title rdfs:label "title" .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( ncit:C17021
+                ncit:C26549
+                ncit:C813
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( omicso:DownRegulation
+                omicso:NoChange
+                omicso:UpRegulation
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( obo:GO_0003674
+                obo:GO_0005575
+                obo:GO_0008150
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
